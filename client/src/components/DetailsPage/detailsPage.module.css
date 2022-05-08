@@ -1,0 +1,125 @@
+.bg_details {
+  background-image: url("../../Imagenes/99-films-FS89E75gv04-unsplash.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.a_back_details {
+  text-decoration: none;
+  height: 0%;
+  width: 5%;
+}
+
+.boton {
+  margin: 15px 0 0 10px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  background: white;
+  color: black;
+  font-size: larger;
+  border-radius: 20px;
+  padding: 3px;
+  font-family: "Kanit", sans-serif;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.img_holder {
+  position: relative;
+  top: 8%;
+  right: 5%;
+  width: 35%;
+  height: 40%;
+  margin: 10px 30px;
+  border-radius: 20px;
+}
+
+.title {
+  display: inline-flex;
+  color: white;
+  position: relative;
+  top: -27%;
+  right: 5%;
+  text-decoration-line: underline;
+}
+
+.diets {
+  display: inline-flex;
+  justify-content: flex-start;
+  border: none;
+  position: relative;
+  left: -38%;
+  top: -18%;
+  background: #000000a3;
+  border-radius: 20px;
+  padding: 0;
+  color: white;
+}
+
+.ul_details_diet {
+  list-style: none;
+  padding: 0 7px;
+}
+
+.score {
+  position: relative;
+  top: -8%;
+  color: white;
+  left: -49%;
+  background: #000000a3;
+  display: inline-flex;
+  border: none;
+  border-radius: 20px;
+  padding: 7px;
+}
+
+.healthyLevel {
+  position: relative;
+  top: -8%;
+  color: white;
+  left: -47%;
+  background: #000000a3;
+  display: inline-flex;
+  border: none;
+  border-radius: 20px;
+  padding: 7px;
+}
+
+.description {
+  display: inline-flex;
+  position: relative;
+  color: aliceblue;
+  top: 5%;
+  left: -5%;
+  margin: 0px 740px 0px 30px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: large;
+  background: #180f09b3;
+}
+
+.instructions {
+  display: inline-flex;
+  position: relative;
+  color: aliceblue;
+  top: -35%;
+  left: 42%;
+  margin: 0px 690px 0px 100px;
+  padding: 10px 10px;
+  border-radius: 20px;
+  font-size: large;
+  background: #00000085;
+  border: none;
+}

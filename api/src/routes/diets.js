@@ -5,18 +5,15 @@ const router = Router();
 
 router.get('/', async (req, res) => {
     const dietTypes = [
-        "Gluten Free",
-        "Dairy Free",
-        "Lacto-Vegetarian",
-        "Ovo-Vegetarian",
-        "Vegan",
-        "Paleo",
-        "Prima",
-        "Whole30",
-        "Ketogenic",
-        "Vegetarian",
-        "Pescetarian",
-        "Low FODMAP",
+        "gluten free",
+        "dairy free",
+        "lacto ovo vegetarian",
+        "vegan",
+        "paleolithic",
+        "primal",
+        "whole 30",
+        "pescatarian",
+        "fodmap friendly",
       ];
       
       dietTypes.forEach(async (d) => {
@@ -34,8 +31,6 @@ router.get('/', async (req, res) => {
       } catch (error) {
         console.log(error);
       }
-    
-      res.status(200).send();
 });
 
 module.exports = router;

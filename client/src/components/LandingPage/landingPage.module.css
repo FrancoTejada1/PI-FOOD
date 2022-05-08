@@ -1,0 +1,47 @@
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.bg_landing {
+  background-image: url("../../Imagenes/louis-hansel-MlPD-AzZYMg-unsplash.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.bg_text {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  height: 60%;
+  width: 40%;
+  margin-left: 2%;
+  color: black;
+  font-size: xx-large;
+  text-align: center;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.boton {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: larger;
+  background: transparent;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.boton:active {
+    transform: scale(0.98);
+    box-shadow: 3px 3px 9px black;
+}

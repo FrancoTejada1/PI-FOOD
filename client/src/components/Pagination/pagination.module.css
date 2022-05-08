@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.ul_pagination {
+  text-align: center;
+  list-style: none;
+  display: inline-flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  margin: 20px 520px;
+}
+
+.listas button {
+  display: inline-block;
+  padding: 10px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  color: silver;
+  position: relative;
+  cursor: pointer;
+}
