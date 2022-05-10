@@ -22,8 +22,8 @@ export default function DetailsPage() {
         <Link className={style.a_back_details} to="/recipes">
           <button className={style.boton}>{"<<"}</button>
         </Link>
-        <div >
-          <img className={style.img_holder} src={allDetails.img} alt={allDetails.name}/>
+        <div className={style.conteiner_details} >
+          <img className={style.img_holder} src={allDetails.img} alt="img not found"/>
           <div className={style.title}>
             <h1>{allDetails.name}</h1>
           </div>

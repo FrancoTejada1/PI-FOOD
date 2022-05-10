@@ -20,10 +20,11 @@ html {
 .container_boton {
   display: inline-flex;
   justify-content: flex-end;
-  width: 100%;
+  width: 9%;
   height: 5%;
   position: relative;
   top: -3%;
+  left: 90%;
 }
 
 .a_create {
@@ -56,7 +57,10 @@ html {
 
 .header {
   display: inline-block;
-  margin: 0px 20px;
+  margin: 0px 20px 27px;
+  position: relative;
+  top: 30px;
+  right: 143px;
 }
 
 .select {

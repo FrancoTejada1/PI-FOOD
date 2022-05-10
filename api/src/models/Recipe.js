@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
       score: {
@@ -29,11 +29,6 @@ module.exports = (sequelize) => {
       },
       instructions: {
         type: DataTypes.TEXT,
-      },
-      createdInDB: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
       },
   }, {
     timestamps: false,

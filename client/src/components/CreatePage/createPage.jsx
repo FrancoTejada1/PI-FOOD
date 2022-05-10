@@ -20,6 +20,8 @@ export default function NewRecipe() {
     diets: [],
   });
 
+  const [errors, setErrors] = useState({});
+
   useEffect(() => {
     dispatch(getDiets());
   }, [dispatch]);
@@ -50,7 +52,6 @@ export default function NewRecipe() {
       healthyLevel: "",
       instructions: "",
       diets: [],
-      id: "",
     });
     navigate("/recipes");
   }

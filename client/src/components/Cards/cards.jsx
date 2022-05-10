@@ -9,7 +9,7 @@ export default function Cards({ img, name, diets, id }) {
   return (
     <div className={style.conteiner_card}>
       <div className={style.card}>
-        <Link to={`/recipes/${id}`}>
+        <Link className={style.a_card} to={`/recipes/${id}`}>
           <img className={style.img_holder} src={img} alt={name} />
           <h1 className={style.title}>{name}</h1>
           <div className={style.diets}>
