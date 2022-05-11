@@ -5,6 +5,7 @@ import Pagination from "../Pagination/pagination.jsx";
 import { Link } from "react-router-dom";
 import Cards from "../Cards/cards.jsx";
 import { filterByDiets } from "../../redux/actions/index.js";
+import { filterByUploaded } from "../../redux/actions/index.js";
 import { sortByName } from "../../redux/actions/index.js";
 import { sortByScore } from "../../redux/actions/index.js";
 import SearchBar from "../SearchBar/searchBar.jsx";
@@ -35,26 +36,29 @@ export default function HomePage() {
     setPage(numberPage);
   };
 
-  function handlerFilterByDiets(e) {
+  const handlerFilterByDiets = (e) => {
     dispatch(filterByDiets(e.target.value));
   }
 
-  function handlerSortByName(e) {
+  const handlerSortByName = (e) => {
     e.preventDefault();
     dispatch(sortByName(e.target.value));
     setPage(1);
     setOrder(`Ordenado ${e.target.value}`);
   }
 
-  function handlerSortByScore(e) {
+  const handlerSortByScore = (e) => {
     e.preventDefault();
     dispatch(sortByScore(e.target.value));
     setPage(1);
     setOrder(`Ordenado ${e.target.value}`);
   }
 
+  console.log(allRecipes);
+
   return (
     <div className={style.bg_home}>
+      
       <SearchBar />
       <div className={style.container_boton}>
         <Link className={style.a_create} to="/create">
@@ -83,6 +87,7 @@ export default function HomePage() {
           <option value="Lower Score">Lower Score</option>
         </select>
       </div>
+      
       <div>
         <Pagination
           recipe={recipe}
@@ -104,5 +109,6 @@ export default function HomePage() {
         })}
       </div>
     </div>
+    
   );
 }

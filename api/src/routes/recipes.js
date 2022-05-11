@@ -47,7 +47,7 @@ const getAllInfo = async () => {
 };
 
 router.get('/', async (req, res) => {
-    const recipe = await getAllInfo();
+  const recipe = await getAllInfo();
   const { name } = req.query;
 
   try {
@@ -64,6 +64,7 @@ router.get('/', async (req, res) => {
     console.log(error);
   }
 });
+
 
 router.get('/:id', async (req, res) => {
     const recipeId = await getAllInfo();

@@ -86,76 +86,29 @@ export default function NewRecipe() {
         <form onSubmit={(e) => handlerSubmit(e)}>
           <div>
             <label className={style.label}>Name of Recipe</label>
-            <input
-              className={style.input}
-              type="text"
-              value={recipes.name}
-              placeholder="Name of Recipe"
-              name="name"
-              onChange={(e) => handlerChange(e)}
-            ></input>
+            <input className={style.input} type="text" value={recipes.name} placeholder="Name of Recipe" name="name" onChange={(e) => handlerChange(e)}/>
             {errors.name ? (<p className={style.validation}>{errors.name}</p>) : null}
           </div>
           <div>
             <label className={style.label}>Image</label>
-            <input
-              className={style.input}
-              type="text"
-              value={recipes.img}
-              placeholder="Image(URL)"
-              name="img"
-              onChange={(e) => handlerChange(e)}
-            ></input>
+            <input className={style.input} type="text" value={recipes.img} placeholder="Image(URL)" name="img" onChange={(e) => handlerChange(e)}/>
           </div>
           <div>
             <label className={style.label}>Description</label>
-            <input
-              className={style.input}
-              type="text"
-              value={recipes.description}
-              placeholder="Description"
-              name="description"
-              onChange={(e) => handlerChange(e)}
-              required
-            ></input>
+            <input className={style.input} type="text" value={recipes.description} placeholder="Description" name="description" onChange={(e) => handlerChange(e)}/>
             {errors.description ? <p className={style.validation}>{errors.description}</p> : null}
           </div>
           <div>
             <label className={style.label}>Score</label>
-            <input
-              className={style.input}
-              type="number"
-              value={recipes.score}
-              placeholder="(0 - 100)"
-              name="score"
-              onChange={(e) => handlerChange(e)}
-              min="0"
-              max="100"
-            ></input>
+            <input className={style.input} type="numbe" value={recipes.score} placeholder="(0 - 100)" name="score" onChange={(e) => handlerChange(e)} min="0" max="100"/>
           </div>
           <div>
             <label className={style.label}>Healthy Level</label>
-            <input
-              className={style.input}
-              type="number"
-              value={recipes.healthyLevel}
-              placeholder="(0-100)"
-              name="healthyLevel"
-              onChange={(e) => handlerChange(e)}
-              min="0"
-              max="100"
-            ></input>
+            <input className={style.input} type="number" value={recipes.healthyLevel} placeholder="(0-100)" name="healthyLevel" onChange={(e) => handlerChange(e)} min="0" max="100"/>
           </div>
           <div>
             <label className={style.label}>Instructions</label>
-            <input
-              className={style.input}
-              type="text"
-              value={recipes.instructions}
-              placeholder="Instructions"
-              name="instructions"
-              onChange={(e) => handlerChange(e)}
-            ></input>
+            <input className={style.input} type="text" value={recipes.instructions} placeholder="Instructions" name="instructions" onChange={(e) => handlerChange(e)}/>
           </div>
           <div>
             <label className={style.label}>Diets</label>

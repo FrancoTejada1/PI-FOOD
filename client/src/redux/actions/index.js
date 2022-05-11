@@ -5,6 +5,7 @@ export const GET_RECIPES_BY_NAME = 'GET_RECIPES_BY_NAME';
 export const POST_NEW_RECIPES = 'POST_NEW_RECIPES';
 export const GET_DIETS = 'GET_DIETS';
 export const FILTER_BY_DIETS = 'FILTER_BY_DIETS';
+export const FILTER_BY_UPLOADED = 'FILTER_BY_UPLOADED';
 export const SORT_BY_NAME = 'SORT_BY_NAME';
 export const SORT_BY_SCORE = 'SORT_BY_SCORE';
 
