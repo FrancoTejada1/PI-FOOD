@@ -4,13 +4,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { postRecipes, getDiets } from "../../redux/actions/index.js";
 import style from "./createPage.module.css";
 
+const validation = (recipe) => {
+  let errors = {};
+
+  if(!recipe.name){
+    errors.name = "name required"
+  }
+  else if(!recipe.description){
+    errors.description = "description required"
+  }
+
+  return errors;
+}
+
 export default function NewRecipe() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const diets = useSelector((state) => state.diets);
 
-  const [input, setInput] = useState({
+  const [recipes, setRecipes] = useState({
     name: "",
     img: "",
     description: "",
@@ -27,24 +40,29 @@ export default function NewRecipe() {
   }, [dispatch]);
 
   const handlerChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
+    setRecipes({
+      ...recipes,
+      [e.target.name]: e.target.value
     });
+    setErrors(validation({
+      ...recipes,
+      [e.target.name]: e.target.value
+    }))
   };
 
   const handlerSelect = (e) => {
-    setInput({
-      ...input,
-      diets: [...input.diets, e.target.value],
+    setRecipes({
+      ...recipes,
+      diets: [...recipes.diets, e.target.value],
     });
   };
-
-  function handlerSubmit(e) {
+  
+  const handlerSubmit = (e) => {
     e.preventDefault();
-    console.log(input);
-    dispatch(postRecipes(input));
-    setInput({
+    console.log(recipes);
+    dispatch(postRecipes(recipes));
+    alert("se creo con exito")
+    setRecipes({
       name: "",
       img: "",
       description: "",
@@ -71,19 +89,19 @@ export default function NewRecipe() {
             <input
               className={style.input}
               type="text"
-              value={input.name}
+              value={recipes.name}
               placeholder="Name of Recipe"
               name="name"
               onChange={(e) => handlerChange(e)}
-              required
             ></input>
+            {errors.name ? (<p className={style.validation}>{errors.name}</p>) : null}
           </div>
           <div>
             <label className={style.label}>Image</label>
             <input
               className={style.input}
               type="text"
-              value={input.img}
+              value={recipes.img}
               placeholder="Image(URL)"
               name="img"
               onChange={(e) => handlerChange(e)}
@@ -94,20 +112,21 @@ export default function NewRecipe() {
             <input
               className={style.input}
               type="text"
-              value={input.description}
+              value={recipes.description}
               placeholder="Description"
               name="description"
               onChange={(e) => handlerChange(e)}
               required
             ></input>
+            {errors.description ? <p className={style.validation}>{errors.description}</p> : null}
           </div>
           <div>
             <label className={style.label}>Score</label>
             <input
               className={style.input}
               type="number"
-              value={input.score}
-              placeholder="Score"
+              value={recipes.score}
+              placeholder="(0 - 100)"
               name="score"
               onChange={(e) => handlerChange(e)}
               min="0"
@@ -119,8 +138,8 @@ export default function NewRecipe() {
             <input
               className={style.input}
               type="number"
-              value={input.healthyLevel}
-              placeholder="Healthy Level"
+              value={recipes.healthyLevel}
+              placeholder="(0-100)"
               name="healthyLevel"
               onChange={(e) => handlerChange(e)}
               min="0"
@@ -132,7 +151,7 @@ export default function NewRecipe() {
             <input
               className={style.input}
               type="text"
-              value={input.instructions}
+              value={recipes.instructions}
               placeholder="Instructions"
               name="instructions"
               onChange={(e) => handlerChange(e)}
@@ -140,11 +159,7 @@ export default function NewRecipe() {
           </div>
           <div>
             <label className={style.label}>Diets</label>
-            <select
-              className={style.select}
-              placeholder="Diets"
-              onChange={(e) => handlerSelect(e)}
-            >
+            <select className={style.select} onChange={(e) => handlerSelect(e)}>
               {diets?.map((d, i) => (
                 <option key={i} value={d.name}>
                   {d.name}
@@ -153,7 +168,7 @@ export default function NewRecipe() {
             </select>
           </div>
           <p className={style.diets_concats}>
-            {input.diets?.map((d) => `${d}, `)}
+            {recipes.diets?.map((d) => `${d}, `)}
           </p>
           <div>
             <button className={style.bt_create} type="submit">

@@ -18,6 +18,7 @@ export default function DetailsPage() {
 
   return (
     <div className={style.bg_details}>
+      {allDetails && (typeof allDetails.id === 'number' ? allDetails.id === Number.parseInt(id) : allDetails.id === id) ?
       <div className={style.details}>
         <Link className={style.a_back_details} to="/recipes">
           <button className={style.boton}>{"<<"}</button>
@@ -45,6 +46,7 @@ export default function DetailsPage() {
           <p className={style.instructions}>Instructions: {allDetails.instructions}</p>
         </div>
       </div>
+      : <h1>Loading...</h1>}
     </div>
   );
 }

@@ -31,6 +31,17 @@ html {
   font-family: "Kanit", sans-serif;
 }
 
+.validation {
+  position: relative;
+  left: 30%;
+  font-size: larger;
+  font-weight: 1000;
+  color: red;
+  font-family: "Kanit";
+  width: max-content;
+  top: 0;
+}
+
 .title_create {
   position: relative;
   top: 8%;
@@ -52,11 +63,11 @@ html {
 }
 
 .label {
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    bottom: 0;
-    left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  bottom: 0;
+  left: 20px;
 }
 
 .input {
@@ -73,20 +84,15 @@ html {
   font-weight: bold;
 }
 
-input[type=number]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 
-input[type=number]::-webkit-inner-spin-button {
-
-    -webkit-appearance: none;
-
-    margin: 0;
-
+  margin: 0;
 }
 
-input[type=number] {
-
-    -moz-appearance:textfield;
-
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .select {
@@ -104,10 +110,10 @@ input[type=number] {
 }
 
 .diets_concats {
-    margin: 30px 10px 10px;
-    font-family: "Kanit", sans-serif;
-    color: black;
-    font-weight: bolder;
+  margin: 30px 10px 10px;
+  font-family: "Kanit", sans-serif;
+  color: black;
+  font-weight: bolder;
 }
 
 .bt_create {
